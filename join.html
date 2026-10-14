@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>参加・支援｜WARMBLUEmachida</title>
+<meta name="description" content="イベント参加、ボランティア、協賛・寄付、お問い合わせ。WARMBLUEmachidaへの参加・支援のご案内。">
+<meta property="og:title" content="参加・支援｜WARMBLUEmachida">
+<meta property="og:description" content="イベント参加、ボランティア、協賛・寄付、お問い合わせ。WARMBLUEmachidaへの参加・支援のご案内。">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/heroposter.webp">
+<link rel="icon" type="image/webp" href="assets/emblem.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Noto+Sans+JP:wght@300;400;500;700&family=Shippori+Mincho:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body class="entering">
+<div class="page-fade" aria-hidden="true"></div>
+<div class="noise" aria-hidden="true"></div>
+
+<div id="cursor" aria-hidden="true"><i class="c-core"></i></div>
+
+<header id="siteHeader" class="site-header">
+  <a class="logo" href="index.html" aria-label="WARM BLUE MACHIDA トップへ"><img src="assets/emblem.webp" alt="WARM BLUE MACHIDA"><span class="logo-txt">WARM BLUE <em>MACHIDA</em></span></a>
+  <div class="nav-right">
+    <ul class="gnav" aria-label="グローバルナビゲーション"><li><a href="about.html">ABOUT</a></li><li><a href="spots.html">SPOTS</a></li><li><a href="schedule.html">SCHEDULE</a></li><li><a href="gallery.html">GALLERY</a></li><li><a href="join.html" aria-current="page">JOIN</a></li></ul>
+    <button id="motionToggle" type="button" aria-pressed="false" title="アニメーションを減らす">モーションを抑える</button>
+    <button id="menuBtn" type="button" aria-expanded="false" aria-controls="menu" aria-label="メニューを開く"><span></span><span></span></button>
+  </div>
+</header>
+
+<nav id="menu" aria-label="サイト内メニュー">
+  <div class="menu-bg" id="menuBg" aria-hidden="true"></div>
+  <button id="menuClose" type="button" aria-label="メニューを閉じる">
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 5 L19 19 M19 5 L5 19"/></svg>
+  </button>
+  <ul><li><a href="index.html" data-bg="assets/sakura_up.webp"><small>TOP</small>トップ</a></li><li><a href="about.html" data-bg="assets/committee.webp"><small>ABOUT</small>活動について</a></li><li><a href="spots.html" data-bg="assets/deck.webp"><small>SPOTS</small>ブルーライトアップ</a></li><li><a href="schedule.html" data-bg="assets/hanami.webp"><small>SCHEDULE</small>スケジュール</a></li><li><a href="gallery.html" data-bg="assets/sakura_night.webp"><small>GALLERY</small>ギャラリー</a></li><li><a href="join.html" data-bg="assets/hanabi_crowd.webp" aria-current="page"><small>JOIN</small>参加・支援</a></li></ul>
+</nav>
+
+<div id="progress" aria-hidden="true"><i></i></div>
+
+<main>
+
+<section class="page-head" aria-label="あなたの想いも、<br>ひとつの光になる。">
+  <div class="ph-bg" style="background-image:url('assets/hanabi_crowd.webp')" role="img" aria-label="芹ケ谷公園で夜空を見上げる人々と打ち上がる花火"></div>
+  <div class="ph-ov" aria-hidden="true"></div>
+  <div class="ph-inner">
+    <div class="crumb"><a href="index.html">HOME</a><span>JOIN</span></div>
+    <span class="eyebrow">JOIN</span>
+    <h1>あなたの想いも、<br>ひとつの光になる。</h1>
+    <p class="ph-lead">参加のかたちはさまざまです。できることから、一緒に。</p>
+  </div>
+</section>
+
+<section id="join" class="sub">
+  <div class="bento reveal">
+    <a class="b-card b-main" href="schedule.html" style="background-image:url('assets/hanabi_crowd.webp')">
+      <span class="glow" aria-hidden="true"></span>
+      <span class="b-en">EVENT</span>
+      <span class="b-ttl">イベントへ参加する</span>
+      <span class="b-desc">ブルーライトアップや青い花火を、同じ空の下で。どなたでもご参加いただけます。最新の開催情報はスケジュールをご覧ください。</span>
+      <span class="b-arrow" aria-hidden="true">→</span>
+    </a>
+    <a class="b-card b2" href="gallery.html">
+      <span class="glow" aria-hidden="true"></span>
+      <span class="b-en">SHARE</span>
+      <span class="b-ttl">活動を知る・広める</span>
+      <span class="b-desc">SNSでのシェアや、身近な人への一言も、大切な参加のかたちです。</span>
+      <span class="b-arrow" aria-hidden="true">→</span>
+    </a>
+    <a class="b-card b3" href="#contact">
+      <span class="glow" aria-hidden="true"></span>
+      <span class="b-en">VOLUNTEER</span>
+      <span class="b-ttl">ボランティアとして参加する</span>
+      <span class="b-desc">イベント運営や設営、清掃活動など、一緒に活動してくださる方を歓迎します。</span>
+      <span class="b-arrow" aria-hidden="true">→</span>
+    </a>
+    <a class="b-card b4" href="#contact">
+      <span class="glow" aria-hidden="true"></span>
+      <span class="b-en">PARTNER</span>
+      <span class="b-ttl">協力企業・団体として</span>
+      <span class="b-desc">ライトアップへのご協力や協賛など、企業・施設・団体の皆様との連携を進めています。</span>
+      <span class="b-arrow" aria-hidden="true">→</span>
+    </a>
+    <a class="b-card b5" href="#contact">
+      <span class="glow" aria-hidden="true"></span>
+      <span class="b-en">DONATE</span>
+      <span class="b-ttl">寄付で支援する</span>
+      <span class="b-desc">いただいたご支援は、ライトアップや花火など、活動の運営に活用させていただきます。</span>
+      <span class="b-arrow" aria-hidden="true">→</span>
+    </a>
+    <a class="b-card b6" href="#contact">
+      <span class="glow" aria-hidden="true"></span>
+      <span class="b-en">CONTACT</span>
+      <span class="b-ttl">お問い合わせ</span>
+      <span class="b-desc">取材、協力のご相談など、お気軽にご連絡ください。</span>
+      <span class="b-arrow" aria-hidden="true">→</span>
+    </a>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="ct-grid">
+    <div class="reveal">
+      <span class="eyebrow">CONTACT</span>
+      <h2 class="h2">お問い合わせ</h2>
+      <p class="body-txt" style="margin-top:28px;color:var(--gray)">取材のご依頼、ライトアップへのご協力、協賛・寄付、ボランティア参加のご相談など、お気軽にご連絡ください。</p>
+    </div>
+    <div class="reveal">
+      <ul class="ct-list">
+        <li><b>ORGANIZATION</b><span>WARMBLUEmachida実行委員会</span></li>
+        <li><b>AREA</b><span>東京都町田市</span></li>
+        <li><b>FORM</b><span>お問い合わせフォーム（準備中）</span></li>
+        <li><b>SOCIAL</b><span>Instagram／X／Facebook（準備中）</span></li>
+      </ul>
+      <p class="ct-note">※ 連絡先・フォームは公開準備中です。公開まで今しばらくお待ちください。</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="foot-aurora" aria-hidden="true"></div>
+  <div class="foot-grid">
+    <div class="foot-brand">
+      <img src="assets/emblem.webp" alt="WARM BLUE MACHIDA">
+      <p>世界自閉症啓発デーに合わせて、町田の街を青い光で彩り、自閉症への理解を広げる活動です。</p>
+    </div>
+    <div class="foot-nav">
+      <ul>
+        <b>SITE</b>
+        <li><a href="index.html">トップ</a></li>
+        <li><a href="about.html">活動について</a></li>
+        <li><a href="spots.html">ブルーライトアップ</a></li>
+        <li><a href="schedule.html">スケジュール</a></li>
+        <li><a href="gallery.html">ギャラリー</a></li>
+        <li><a href="join.html">参加・支援</a></li>
+      </ul>
+      <ul>
+        <b>SOCIAL</b>
+        <li><a href="#" aria-disabled="true">Instagram（準備中）</a></li>
+        <li><a href="#" aria-disabled="true">X（準備中）</a></li>
+        <li><a href="#" aria-disabled="true">Facebook（準備中）</a></li>
+      </ul>
+      <ul>
+        <b>INFO</b>
+        <li><a href="join.html#contact">お問い合わせ</a></li>
+        <li><a href="#" aria-disabled="true">プライバシーポリシー（準備中）</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-big" aria-hidden="true">WARMBLUE<br>MACHIDA</div>
+  <div class="foot-btm">
+    <span>WARMBLUEmachida実行委員会</span>
+    <span>© WARMBLUEmachida Executive Committee</span>
+  </div>
+</footer>
+
+<script src="assets/main.js"></script>
+</body>
+</html>

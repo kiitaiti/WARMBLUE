@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ギャラリー｜WARMBLUEmachida</title>
+<meta name="description" content="ブルーライトアップと青い花火の写真ギャラリー。町田に生まれた青い時間の記録。">
+<meta property="og:title" content="ギャラリー｜WARMBLUEmachida">
+<meta property="og:description" content="ブルーライトアップと青い花火の写真ギャラリー。町田に生まれた青い時間の記録。">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/heroposter.webp">
+<link rel="icon" type="image/webp" href="assets/emblem.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Noto+Sans+JP:wght@300;400;500;700&family=Shippori+Mincho:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body class="entering">
+<div class="page-fade" aria-hidden="true"></div>
+<div class="noise" aria-hidden="true"></div>
+
+<div id="cursor" aria-hidden="true"><i class="c-core"></i></div>
+
+<header id="siteHeader" class="site-header">
+  <a class="logo" href="index.html" aria-label="WARM BLUE MACHIDA トップへ"><img src="assets/emblem.webp" alt="WARM BLUE MACHIDA"><span class="logo-txt">WARM BLUE <em>MACHIDA</em></span></a>
+  <div class="nav-right">
+    <ul class="gnav" aria-label="グローバルナビゲーション"><li><a href="about.html">ABOUT</a></li><li><a href="spots.html">SPOTS</a></li><li><a href="schedule.html">SCHEDULE</a></li><li><a href="gallery.html" aria-current="page">GALLERY</a></li><li><a href="join.html">JOIN</a></li></ul>
+    <button id="motionToggle" type="button" aria-pressed="false" title="アニメーションを減らす">モーションを抑える</button>
+    <button id="menuBtn" type="button" aria-expanded="false" aria-controls="menu" aria-label="メニューを開く"><span></span><span></span></button>
+  </div>
+</header>
+
+<nav id="menu" aria-label="サイト内メニュー">
+  <div class="menu-bg" id="menuBg" aria-hidden="true"></div>
+  <button id="menuClose" type="button" aria-label="メニューを閉じる">
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 5 L19 19 M19 5 L5 19"/></svg>
+  </button>
+  <ul><li><a href="index.html" data-bg="assets/sakura_up.webp"><small>TOP</small>トップ</a></li><li><a href="about.html" data-bg="assets/committee.webp"><small>ABOUT</small>活動について</a></li><li><a href="spots.html" data-bg="assets/deck.webp"><small>SPOTS</small>ブルーライトアップ</a></li><li><a href="schedule.html" data-bg="assets/hanami.webp"><small>SCHEDULE</small>スケジュール</a></li><li><a href="gallery.html" data-bg="assets/sakura_night.webp" aria-current="page"><small>GALLERY</small>ギャラリー</a></li><li><a href="join.html" data-bg="assets/hanabi_crowd.webp"><small>JOIN</small>参加・支援</a></li></ul>
+</nav>
+
+<div id="progress" aria-hidden="true"><i></i></div>
+
+<main>
+
+<section class="page-head" aria-label="町田に生まれた、<br>青い時間。">
+  <div class="ph-bg" style="background-image:url('assets/sakura_night.webp')" role="img" aria-label="夜の芹ケ谷公園。青い桜とキッチンカーの灯り"></div>
+  <div class="ph-ov" aria-hidden="true"></div>
+  <div class="ph-inner">
+    <div class="crumb"><a href="index.html">HOME</a><span>GALLERY</span></div>
+    <span class="eyebrow">GALLERY</span>
+    <h1>町田に生まれた、<br>青い時間。</h1>
+    <p class="ph-lead">ブルーライトアップと青い花火の記録。写真をクリックすると拡大表示されます。</p>
+  </div>
+</section>
+
+<section id="gallery" class="sub">
+  <div class="masonry" id="masonry">
+    <button class="m-item" data-cap="青い花火｜芹ケ谷公園"><img src="assets/hanabi_blue.webp" alt="夜空に立ち上る青い花火の光跡" loading="lazy"><span class="m-cap">青い花火｜芹ケ谷公園</span></button>
+    <button class="m-item" data-cap="ペデストリアンデッキ"><img src="assets/deck.webp" alt="青い光に包まれたペデストリアンデッキ" loading="lazy"><span class="m-cap">ペデストリアンデッキ</span></button>
+    <button class="m-item" data-cap="花火を見上げる人々｜芹ケ谷公園"><img src="assets/hanabi_crowd.webp" alt="公園の芝生から花火を見上げる大勢の人々" loading="lazy"><span class="m-cap">花火を見上げる人々｜芹ケ谷公園</span></button>
+    <button class="m-item" data-cap="ブルーに染まる夜桜"><img src="assets/sakura_up.webp" alt="青い光に照らされた桜の花のクローズアップ" loading="lazy"><span class="m-cap">ブルーに染まる夜桜</span></button>
+    <button class="m-item" data-cap="青い桜と花見｜芹ケ谷公園"><img src="assets/hanami.webp" alt="青くライトアップされた桜の下で花見をする人々" loading="lazy"><span class="m-cap">青い桜と花見｜芹ケ谷公園</span></button>
+    <button class="m-item" data-cap="国際版画美術館"><img src="assets/hanga.webp" alt="夕暮れにブルーライトアップされた国際版画美術館" loading="lazy"><span class="m-cap">国際版画美術館</span></button>
+    <button class="m-item" data-cap="まちなかのイルミネーション"><img src="assets/staba.webp" alt="青い電球の並ぶ街路樹と店先" loading="lazy"><span class="m-cap">まちなかのイルミネーション</span></button>
+    <button class="m-item" data-cap="実行委員会のメンバー"><img src="assets/committee.webp" alt="青い桜の前に集まった実行委員会メンバーの集合写真" loading="lazy"><span class="m-cap">実行委員会のメンバー</span></button>
+    <button class="m-item" data-cap="青いやまゆり号（D51）"><img src="assets/yamayuri.webp" alt="青い光に照らされた蒸気機関車D51" loading="lazy"><span class="m-cap">青いやまゆり号（D51）</span></button>
+    <button class="m-item" data-cap="夜の芹ケ谷公園"><img src="assets/sakura_night.webp" alt="青い桜とキッチンカーの灯り" loading="lazy"><span class="m-cap">夜の芹ケ谷公園</span></button>
+  </div>
+</section>
+
+<div id="lightbox" role="dialog" aria-modal="true" aria-label="写真の拡大表示">
+  <button id="lbClose" type="button">CLOSE ×</button>
+  <img id="lbImg" src="" alt="">
+  <p id="lbCap"></p>
+</div>
+
+<section class="cta-band">
+  <div class="cta-glow" aria-hidden="true"></div>
+  <div class="cta-in reveal">
+    <h2 class="h2">次は、あなたもこの景色の中に。</h2>
+    <a class="btn-solid" href="join.html">参加・支援について</a>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="foot-aurora" aria-hidden="true"></div>
+  <div class="foot-grid">
+    <div class="foot-brand">
+      <img src="assets/emblem.webp" alt="WARM BLUE MACHIDA">
+      <p>世界自閉症啓発デーに合わせて、町田の街を青い光で彩り、自閉症への理解を広げる活動です。</p>
+    </div>
+    <div class="foot-nav">
+      <ul>
+        <b>SITE</b>
+        <li><a href="index.html">トップ</a></li>
+        <li><a href="about.html">活動について</a></li>
+        <li><a href="spots.html">ブルーライトアップ</a></li>
+        <li><a href="schedule.html">スケジュール</a></li>
+        <li><a href="gallery.html">ギャラリー</a></li>
+        <li><a href="join.html">参加・支援</a></li>
+      </ul>
+      <ul>
+        <b>SOCIAL</b>
+        <li><a href="#" aria-disabled="true">Instagram（準備中）</a></li>
+        <li><a href="#" aria-disabled="true">X（準備中）</a></li>
+        <li><a href="#" aria-disabled="true">Facebook（準備中）</a></li>
+      </ul>
+      <ul>
+        <b>INFO</b>
+        <li><a href="join.html#contact">お問い合わせ</a></li>
+        <li><a href="#" aria-disabled="true">プライバシーポリシー（準備中）</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-big" aria-hidden="true">WARMBLUE<br>MACHIDA</div>
+  <div class="foot-btm">
+    <span>WARMBLUEmachida実行委員会</span>
+    <span>© WARMBLUEmachida Executive Committee</span>
+  </div>
+</footer>
+
+<script src="assets/main.js"></script>
+</body>
+</html>
