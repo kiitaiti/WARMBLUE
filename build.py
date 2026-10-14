@@ -10,10 +10,10 @@ PAGES = [
     ("spots.html",    "SPOTS",    "ブルーライトアップ", "assets/deck.webp"),
     ("schedule.html", "SCHEDULE", "スケジュール",   "assets/hanami.webp"),
     ("gallery.html",  "GALLERY",  "ギャラリー",     "assets/sakura_night.webp"),
-    ("join.html",     "JOIN",     "参加・支援",     "assets/hanabi_crowd.webp"),
+    ("contact.html",  "CONTACT",  "参加・お問い合わせ", "assets/hanabi_crowd.webp"),
 ]
 MENU_BG = {"index.html":"assets/sakura_up.webp","about.html":"assets/committee.webp","spots.html":"assets/deck.webp",
-           "schedule.html":"assets/hanami.webp","gallery.html":"assets/sakura_night.webp","join.html":"assets/hanabi_crowd.webp"}
+           "schedule.html":"assets/hanami.webp","gallery.html":"assets/sakura_night.webp","contact.html":"assets/hanabi_crowd.webp"}
 
 def head(title, desc, cur):
     full = "WARMBLUEmachida｜青い光で、人と人をつなぐ。" if cur=="index.html" else f"{title}｜WARMBLUEmachida"
@@ -89,7 +89,7 @@ FOOTER = """
         <li><a href="spots.html">ブルーライトアップ</a></li>
         <li><a href="schedule.html">スケジュール</a></li>
         <li><a href="gallery.html">ギャラリー</a></li>
-        <li><a href="join.html">参加・支援</a></li>
+        <li><a href="contact.html">参加・お問い合わせ</a></li>
       </ul>
       <ul>
         <b>SOCIAL</b>
@@ -99,7 +99,7 @@ FOOTER = """
       </ul>
       <ul>
         <b>INFO</b>
-        <li><a href="join.html#contact">お問い合わせ</a></li>
+        <li><a href="contact.html#contact">お問い合わせ</a></li>
         <li><a href="#" aria-disabled="true">プライバシーポリシー（準備中）</a></li>
       </ul>
     </div>
@@ -160,7 +160,15 @@ INDEX = """
   <div class="hero-glow" aria-hidden="true"></div>
   <div class="hero-inner">
     <h1 class="hero-logo" id="heroLogo">
-      <img src="assets/logo_lockup.webp" alt="WARM BLUE MACHIDA — 青い光で、人と人をつなぐ。">
+      <span class="hl-lock">
+        <img src="assets/emblem.webp" alt="">
+        <span class="hl-text">
+          <span class="hl-warm">WARM BLUE</span>
+          <span class="hl-rule"><i></i><span class="hl-machida">MACHIDA</span></span>
+          <span class="hl-tag">青い光で、人と人をつなぐ。</span>
+        </span>
+      </span>
+      <span class="sr-only">WARM BLUE MACHIDA — 青い光で、人と人をつなぐ。</span>
     </h1>
     <p class="hero-sub">自閉症への理解を、町田から。</p>
   </div>
@@ -191,7 +199,7 @@ INDEX = """
   <div class="aw-grid">
     <div class="reveal">
       <span class="eyebrow">BLUE IS A MESSAGE.</span>
-      <div class="aw-num">04.02<small>WORLD AUTISM AWARENESS DAY</small><span class="aw-line" aria-hidden="true"></span></div>
+      <div class="aw-num">04.02<small>WORLD AUTISM AWARENESS DAY</small></div>
       <div class="aw-body body-txt">
         <h2 class="h2" style="font-size:clamp(24px,3vw,36px);margin-bottom:28px">青には、想いがある。</h2>
         <p>毎年4月2日は「世界自閉症啓発デー」です。</p>
@@ -285,11 +293,11 @@ INDEX = """
       <span class="hl-ttl">ギャラリー</span>
       <span class="hl-desc">町田に生まれた、青い時間の記録。</span>
     </a>
-    <a class="hl-card" href="join.html">
+    <a class="hl-card" href="contact.html">
       <img src="assets/hanabi_crowd.webp" alt="" loading="lazy">
       <span class="hl-arrow" aria-hidden="true">→</span>
-      <span class="b-en">JOIN</span>
-      <span class="hl-ttl">参加・支援</span>
+      <span class="b-en">CONTACT</span>
+      <span class="hl-ttl">参加・お問い合わせ</span>
       <span class="hl-desc">あなたの想いも、ひとつの光に。</span>
     </a>
   </div>
@@ -317,7 +325,7 @@ ABOUT = page_head("ABOUT","町田の街を、<br>温かいブルーで包む。"
   <div class="about-grid">
     <div class="about-head reveal">
       <span class="eyebrow">WHO WE ARE</span>
-      <h2 class="h2">自閉症への理解を、<br>町田から。</h2>
+      <h2 class="h2 h2-tight"><span class="nw">自閉症への理解を、</span><br><span class="nw">町田から。</span></h2>
       <div class="about-body body-txt">
         <p>私たちは、自閉症とその周辺の課題について、より多くの人に理解を深めてもらうことを目的に活動する「WARMBLUEmachida実行委員会」です。</p>
         <p style="margin-top:1.8em">2024年、町田市で初めて「WARMBLUEmachida2024」を実施し、多くの皆様からご支援と共感をいただきました。</p>
@@ -388,7 +396,7 @@ ABOUT = page_head("ABOUT","町田の街を、<br>温かいブルーで包む。"
     </div>
   </div>
 </section>
-""" + cta_band("青い光を、一緒に灯しませんか。","join.html","参加・支援について")
+""" + cta_band("青い光を、一緒に灯しませんか。","contact.html","参加・お問い合わせ")
 
 # ======================================================== SPOTS
 SPOTS = page_head("SPOTS","町田のあちこちに、<br>青い光が灯る。",
@@ -517,7 +525,7 @@ SCHEDULE = page_head("SCHEDULE","光が灯った日々。",
       <h2 class="h2" style="font-size:clamp(24px,3.4vw,40px)">次回の開催について</h2>
       <p>次回の開催スケジュールは、決まり次第このページとSNSでお知らせします。協力・協賛のご相談は、随時受け付けています。</p>
     </div>
-    <a class="btn-solid" href="join.html#contact">お問い合わせ</a>
+    <a class="btn-solid" href="contact.html#contact">お問い合わせ</a>
   </div>
 </section>
 """ + cta_band("青い光の場所を、たどる。","spots.html","ブルーライトアップの会場")
@@ -546,10 +554,10 @@ GALLERY = page_head("GALLERY","町田に生まれた、<br>青い時間。",
   <img id="lbImg" src="" alt="">
   <p id="lbCap"></p>
 </div>
-""" + cta_band("次は、あなたもこの景色の中に。","join.html","参加・支援について")
+""" + cta_band("次は、あなたもこの景色の中に。","contact.html","参加・お問い合わせ")
 
 # ======================================================== JOIN
-JOIN = page_head("JOIN","あなたの想いも、<br>ひとつの光になる。",
+JOIN = page_head("CONTACT","あなたの想いも、<br>ひとつの光になる。",
   "参加のかたちはさまざまです。できることから、一緒に。",
   "assets/hanabi_crowd.webp","芹ケ谷公園で夜空を見上げる人々と打ち上がる花火") + """
 <section id="join" class="sub">
@@ -625,7 +633,7 @@ CONTENT = {
   "spots.html": ("", SPOTS, "町田市内のブルーライトアップ会場と、芹ケ谷公園の青い花火についてご紹介します。"),
   "schedule.html": ("", SCHEDULE, "WARMBLUEmachidaの開催スケジュールと、これまでの開催記録。"),
   "gallery.html": ("", GALLERY, "ブルーライトアップと青い花火の写真ギャラリー。町田に生まれた青い時間の記録。"),
-  "join.html": ("", JOIN, "イベント参加、ボランティア、協賛・寄付、お問い合わせ。WARMBLUEmachidaへの参加・支援のご案内。"),
+  "contact.html": ("", JOIN, "イベント参加、ボランティア、協賛・寄付、お問い合わせ。WARMBLUEmachidaへの参加・支援のご案内。"),
 }
 
 for f,en,ja,_ in PAGES:
