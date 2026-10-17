@@ -7,12 +7,13 @@ OUT = os.path.dirname(os.path.abspath(__file__))
 PAGES = [
     ("index.html",    "TOP",      "トップ",        None),
     ("about.html",    "ABOUT",    "活動について",   "assets/committee.webp"),
+    ("story.html",    "STORY",    "青い光のうしろ側", "assets/hanga.webp"),
     ("spots.html",    "SPOTS",    "ブルーライトアップ", "assets/deck.webp"),
     ("schedule.html", "SCHEDULE", "スケジュール",   "assets/hanami.webp"),
     ("gallery.html",  "GALLERY",  "ギャラリー",     "assets/sakura_night.webp"),
     ("contact.html",  "CONTACT",  "参加・お問い合わせ", "assets/hanabi_crowd.webp"),
 ]
-MENU_BG = {"index.html":"assets/sakura_up.webp","about.html":"assets/committee.webp","spots.html":"assets/deck.webp",
+MENU_BG = {"index.html":"assets/sakura_up.webp","about.html":"assets/committee.webp","story.html":"assets/hanga.webp","spots.html":"assets/deck.webp",
            "schedule.html":"assets/hanami.webp","gallery.html":"assets/sakura_night.webp","contact.html":"assets/hanabi_crowd.webp"}
 
 def head(title, desc, cur):
@@ -40,6 +41,7 @@ def head(title, desc, cur):
 """
 
 def nav(cur):
+    if cur=="story-detail.html": cur="story.html"
     gnav = "".join(
         f'<li><a href="{f}"{" aria-current=\"page\"" if f==cur else ""}>{en}</a></li>'
         for f,en,ja,_ in PAGES if f!="index.html")
@@ -86,6 +88,7 @@ FOOTER = """
         <b>SITE</b>
         <li><a href="index.html">トップ</a></li>
         <li><a href="about.html">活動について</a></li>
+        <li><a href="story.html">STORY</a></li>
         <li><a href="spots.html">ブルーライトアップ</a></li>
         <li><a href="schedule.html">スケジュール</a></li>
         <li><a href="gallery.html">ギャラリー</a></li>
@@ -112,6 +115,7 @@ FOOTER = """
 </footer>
 
 <script src="assets/main.js"></script>
+<script src="assets/cms.js"></script>
 </body>
 </html>
 """
@@ -301,6 +305,17 @@ INDEX = """
       <span class="hl-desc">あなたの想いも、ひとつの光に。</span>
     </a>
   </div>
+</section>
+
+<section id="storyTop">
+  <div class="g-head reveal">
+    <div>
+      <span class="eyebrow">STORY</span>
+      <h2 class="h2">青い光の、<br>うしろ側。</h2>
+    </div>
+    <a class="btn-line light" href="story.html">すべての記事を読む <i>→</i></a>
+  </div>
+  <div class="st-grid reveal" id="storyTeaser"></div>
 </section>
 
 <section id="ending">
@@ -627,16 +642,45 @@ JOIN = page_head("CONTACT","あなたの想いも、<br>ひとつの光になる
 </section>
 """
 
+STORY = page_head("STORY","青い光の、<br>うしろ側。",
+  "なぜ青なのか。誰が、どんな想いで灯しているのか。花火の裏にある話を、少しずつ書き残していきます。",
+  "assets/hanga.webp","夕暮れにブルーライトアップされた国際版画美術館") + """
+<section id="story">
+  <p class="cms-notice" id="cmsNotice" hidden>※ microCMS未接続のため、サンプル記事を表示しています。assets/cms.js の serviceDomain と apiKey を設定してください。</p>
+  <div class="st-filter" id="storyFilter"></div>
+  <div class="st-grid" id="storyList"><p class="st-empty">読み込み中…</p></div>
+</section>
+""" + cta_band("あなたの想いも、ひとつの光になる。","contact.html","参加・お問い合わせ")
+
+STORY_DETAIL = """
+<section class="page-head st-head" id="storyHead" aria-label="記事">
+  <div class="ph-bg" role="img" aria-label=""></div>
+  <div class="ph-ov" aria-hidden="true"></div>
+  <div class="ph-inner">
+    <div class="crumb"><a href="index.html">HOME</a><span><a href="story.html">STORY</a></span></div>
+    <p class="st-meta"><span class="st-cat"></span><time></time></p>
+    <h1>読み込み中…</h1>
+  </div>
+</section>
+<section id="storyArticle"><p class="st-empty" style="color:var(--gray)">読み込み中…</p></section>
+<section id="storyRelated" hidden>
+  <div class="g-head"><span class="eyebrow">MORE STORIES</span><h2 class="h2" style="font-size:clamp(24px,3vw,36px)">ほかの記事</h2></div>
+  <div class="st-grid"></div>
+</section>
+"""
+
 CONTENT = {
   "index.html": (INDEX[0], INDEX[1], "WARMBLUEmachidaは、世界自閉症啓発デーに合わせて、町田の街をブルーライトと青い花火で彩り、自閉症への理解を広げる活動です。"),
   "about.html": ("", ABOUT, "WARMBLUEmachida実行委員会の活動内容と、これまでの歩みをご紹介します。"),
   "spots.html": ("", SPOTS, "町田市内のブルーライトアップ会場と、芹ケ谷公園の青い花火についてご紹介します。"),
   "schedule.html": ("", SCHEDULE, "WARMBLUEmachidaの開催スケジュールと、これまでの開催記録。"),
   "gallery.html": ("", GALLERY, "ブルーライトアップと青い花火の写真ギャラリー。町田に生まれた青い時間の記録。"),
+  "story.html": ("", STORY, "なぜ青なのか。花火の裏にある話を書き残していくWARMBLUEmachidaのSTORY。"),
+  "story-detail.html": ("", STORY_DETAIL, "WARMBLUEmachidaのSTORY記事。"),
   "contact.html": ("", JOIN, "イベント参加、ボランティア、協賛・寄付、お問い合わせ。WARMBLUEmachidaへの参加・支援のご案内。"),
 }
 
-for f,en,ja,_ in PAGES:
+for f,en,ja,_ in PAGES+[("story-detail.html","STORY","STORY",None)]:
     pre, body, desc = CONTENT[f]
     html = head(ja, desc, f) + pre + nav(f) + body + FOOTER
     with open(os.path.join(OUT,f),"w",encoding="utf-8") as fp: fp.write(html)

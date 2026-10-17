@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>青い光のうしろ側｜WARMBLUEmachida</title>
+<meta name="description" content="なぜ青なのか。花火の裏にある話を書き残していくWARMBLUEmachidaのSTORY。">
+<meta property="og:title" content="青い光のうしろ側｜WARMBLUEmachida">
+<meta property="og:description" content="なぜ青なのか。花火の裏にある話を書き残していくWARMBLUEmachidaのSTORY。">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/heroposter.webp">
+<link rel="icon" type="image/webp" href="assets/emblem.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Noto+Sans+JP:wght@300;400;500;700&family=Shippori+Mincho:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body class="entering">
+<div class="page-fade" aria-hidden="true"></div>
+<div class="noise" aria-hidden="true"></div>
+
+<div id="cursor" aria-hidden="true"><i class="c-core"></i></div>
+
+<header id="siteHeader" class="site-header">
+  <a class="logo" href="index.html" aria-label="WARM BLUE MACHIDA トップへ"><img src="assets/emblem.webp" alt="WARM BLUE MACHIDA"><span class="logo-txt">WARM BLUE <em>MACHIDA</em></span></a>
+  <div class="nav-right">
+    <ul class="gnav" aria-label="グローバルナビゲーション"><li><a href="about.html">ABOUT</a></li><li><a href="story.html" aria-current="page">STORY</a></li><li><a href="spots.html">SPOTS</a></li><li><a href="schedule.html">SCHEDULE</a></li><li><a href="gallery.html">GALLERY</a></li><li><a href="contact.html">CONTACT</a></li></ul>
+    <button id="motionToggle" type="button" aria-pressed="false" title="アニメーションを減らす">モーションを抑える</button>
+    <button id="menuBtn" type="button" aria-expanded="false" aria-controls="menu" aria-label="メニューを開く"><span></span><span></span></button>
+  </div>
+</header>
+
+<nav id="menu" aria-label="サイト内メニュー">
+  <div class="menu-bg" id="menuBg" aria-hidden="true"></div>
+  <button id="menuClose" type="button" aria-label="メニューを閉じる">
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 5 L19 19 M19 5 L5 19"/></svg>
+  </button>
+  <ul><li><a href="index.html" data-bg="assets/sakura_up.webp"><small>TOP</small>トップ</a></li><li><a href="about.html" data-bg="assets/committee.webp"><small>ABOUT</small>活動について</a></li><li><a href="story.html" data-bg="assets/hanga.webp" aria-current="page"><small>STORY</small>青い光のうしろ側</a></li><li><a href="spots.html" data-bg="assets/deck.webp"><small>SPOTS</small>ブルーライトアップ</a></li><li><a href="schedule.html" data-bg="assets/hanami.webp"><small>SCHEDULE</small>スケジュール</a></li><li><a href="gallery.html" data-bg="assets/sakura_night.webp"><small>GALLERY</small>ギャラリー</a></li><li><a href="contact.html" data-bg="assets/hanabi_crowd.webp"><small>CONTACT</small>参加・お問い合わせ</a></li></ul>
+</nav>
+
+<div id="progress" aria-hidden="true"><i></i></div>
+
+<main>
+
+<section class="page-head" aria-label="青い光の、<br>うしろ側。">
+  <div class="ph-bg" style="background-image:url('assets/hanga.webp')" role="img" aria-label="夕暮れにブルーライトアップされた国際版画美術館"></div>
+  <div class="ph-ov" aria-hidden="true"></div>
+  <div class="ph-inner">
+    <div class="crumb"><a href="index.html">HOME</a><span>STORY</span></div>
+    <span class="eyebrow">STORY</span>
+    <h1>青い光の、<br>うしろ側。</h1>
+    <p class="ph-lead">なぜ青なのか。誰が、どんな想いで灯しているのか。花火の裏にある話を、少しずつ書き残していきます。</p>
+  </div>
+</section>
+
+<section id="story">
+  <p class="cms-notice" id="cmsNotice" hidden>※ microCMS未接続のため、サンプル記事を表示しています。assets/cms.js の serviceDomain と apiKey を設定してください。</p>
+  <div class="st-filter" id="storyFilter"></div>
+  <div class="st-grid" id="storyList"><p class="st-empty">読み込み中…</p></div>
+</section>
+
+<section class="cta-band">
+  <div class="cta-glow" aria-hidden="true"></div>
+  <div class="cta-in reveal">
+    <h2 class="h2">あなたの想いも、ひとつの光になる。</h2>
+    <a class="btn-solid" href="contact.html">参加・お問い合わせ</a>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="foot-aurora" aria-hidden="true"></div>
+  <div class="foot-grid">
+    <div class="foot-brand">
+      <img src="assets/emblem.webp" alt="WARM BLUE MACHIDA">
+      <p>世界自閉症啓発デーに合わせて、町田の街を青い光で彩り、自閉症への理解を広げる活動です。</p>
+    </div>
+    <div class="foot-nav">
+      <ul>
+        <b>SITE</b>
+        <li><a href="index.html">トップ</a></li>
+        <li><a href="about.html">活動について</a></li>
+        <li><a href="story.html">STORY</a></li>
+        <li><a href="spots.html">ブルーライトアップ</a></li>
+        <li><a href="schedule.html">スケジュール</a></li>
+        <li><a href="gallery.html">ギャラリー</a></li>
+        <li><a href="contact.html">参加・お問い合わせ</a></li>
+      </ul>
+      <ul>
+        <b>SOCIAL</b>
+        <li><a href="#" aria-disabled="true">Instagram（準備中）</a></li>
+        <li><a href="#" aria-disabled="true">X（準備中）</a></li>
+        <li><a href="#" aria-disabled="true">Facebook（準備中）</a></li>
+      </ul>
+      <ul>
+        <b>INFO</b>
+        <li><a href="contact.html#contact">お問い合わせ</a></li>
+        <li><a href="#" aria-disabled="true">プライバシーポリシー（準備中）</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-big" aria-hidden="true">WARMBLUE<br>MACHIDA</div>
+  <div class="foot-btm">
+    <span>WARMBLUEmachida実行委員会</span>
+    <span>© WARMBLUEmachida Executive Committee</span>
+  </div>
+</footer>
+
+<script src="assets/main.js"></script>
+<script src="assets/cms.js"></script>
+</body>
+</html>

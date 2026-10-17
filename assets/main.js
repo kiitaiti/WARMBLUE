@@ -180,6 +180,7 @@ var io=new IntersectionObserver(function(entries){
   entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
 },{threshold:.18});
 $$('.reveal').forEach(function(el){ io.observe(el); });
+window.WB_reveal=function(){ $$('.reveal:not(.in)').forEach(function(el){ io.observe(el); }); };
 
 function onView(sel,cb,th){
   var el=typeof sel==='string'?$(sel):sel; if(!el) return;
