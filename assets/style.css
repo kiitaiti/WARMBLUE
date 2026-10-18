@@ -405,6 +405,7 @@ body.motion-off #cursor,body.motion-off .spark-dot{display:none}
 .cms-notice{max-width:1360px;margin:0 auto 40px;font-size:12px;letter-spacing:.08em;color:#FFD67A;border:1px dashed rgba(255,214,122,.5);padding:14px 18px;border-radius:6px}
 /* article */
 .page-head.st-head{min-height:72svh}
+.page-head h1 .en,.h2 .en{font-family:var(--font-en);font-weight:300;letter-spacing:.08em}
 .page-head.st-head h1{font-size:clamp(28px,4.2vw,56px);max-width:1000px}
 .page-head .st-meta{margin-bottom:22px;color:rgba(234,245,255,.75)}
 #storyArticle{background:var(--off);padding:clamp(90px,12vh,150px) var(--pad-x)}

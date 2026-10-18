@@ -7,7 +7,7 @@ OUT = os.path.dirname(os.path.abspath(__file__))
 PAGES = [
     ("index.html",    "TOP",      "トップ",        None),
     ("about.html",    "ABOUT",    "活動について",   "assets/committee.webp"),
-    ("story.html",    "STORY",    "青い光のうしろ側", "assets/hanga.webp"),
+    ("story.html",    "STORY",    "WARMBLUE STORY", "assets/hanga.webp"),
     ("spots.html",    "SPOTS",    "ブルーライトアップ", "assets/deck.webp"),
     ("schedule.html", "SCHEDULE", "スケジュール",   "assets/hanami.webp"),
     ("gallery.html",  "GALLERY",  "ギャラリー",     "assets/sakura_night.webp"),
@@ -311,7 +311,7 @@ INDEX = """
   <div class="g-head reveal">
     <div>
       <span class="eyebrow">STORY</span>
-      <h2 class="h2">青い光の、<br>うしろ側。</h2>
+      <h2 class="h2"><span class="en">WARMBLUE</span><br><span class="en">STORY</span></h2>
     </div>
     <a class="btn-line light" href="story.html">すべての記事を読む <i>→</i></a>
   </div>
@@ -642,7 +642,7 @@ JOIN = page_head("CONTACT","あなたの想いも、<br>ひとつの光になる
 </section>
 """
 
-STORY = page_head("STORY","青い光の、<br>うしろ側。",
+STORY = page_head("STORY","<span class=\"en\">WARMBLUE</span><br><span class=\"en\">STORY</span>",
   "なぜ青なのか。誰が、どんな想いで灯しているのか。花火の裏にある話を、少しずつ書き残していきます。",
   "assets/hanga.webp","夕暮れにブルーライトアップされた国際版画美術館") + """
 <section id="story">
