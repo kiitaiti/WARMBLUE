@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ブルーライトアップ｜WARMBLUEmachida</title>
+<meta name="description" content="町田市内のブルーライトアップ会場と、芹ケ谷公園の青い花火についてご紹介します。">
+<meta property="og:title" content="ブルーライトアップ｜WARMBLUEmachida">
+<meta property="og:description" content="町田市内のブルーライトアップ会場と、芹ケ谷公園の青い花火についてご紹介します。">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/heroposter.webp">
+<link rel="icon" type="image/webp" href="assets/emblem.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Noto+Sans+JP:wght@300;400;500;700&family=Shippori+Mincho:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body class="entering">
+<div class="page-fade" aria-hidden="true"></div>
+<div class="noise" aria-hidden="true"></div>
+
+<div id="cursor" aria-hidden="true"><i class="c-core"></i></div>
+
+<header id="siteHeader" class="site-header">
+  <a class="logo" href="index.html" aria-label="WARM BLUE MACHIDA トップへ"><img src="assets/emblem.webp" alt="WARM BLUE MACHIDA"><span class="logo-txt">WARM BLUE <em>MACHIDA</em></span></a>
+  <div class="nav-right">
+    <ul class="gnav" aria-label="グローバルナビゲーション"><li><a href="about.html">ABOUT</a></li><li><a href="story.html">STORY</a></li><li><a href="spots.html" aria-current="page">SPOTS</a></li><li><a href="schedule.html">SCHEDULE</a></li><li><a href="gallery.html">GALLERY</a></li><li><a href="contact.html">CONTACT</a></li></ul>
+    <button id="motionToggle" type="button" aria-pressed="false" title="アニメーションを減らす">モーションを抑える</button>
+    <button id="menuBtn" type="button" aria-expanded="false" aria-controls="menu" aria-label="メニューを開く"><span></span><span></span></button>
+  </div>
+</header>
+
+<nav id="menu" aria-label="サイト内メニュー">
+  <div class="menu-bg" id="menuBg" aria-hidden="true"></div>
+  <button id="menuClose" type="button" aria-label="メニューを閉じる">
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 5 L19 19 M19 5 L5 19"/></svg>
+  </button>
+  <ul><li><a href="index.html" data-bg="assets/sakura_up.webp"><small>TOP</small>トップ</a></li><li><a href="about.html" data-bg="assets/committee.webp"><small>ABOUT</small>活動について</a></li><li><a href="story.html" data-bg="assets/hanga.webp"><small>STORY</small>WARMBLUE STORY</a></li><li><a href="spots.html" data-bg="assets/deck.webp" aria-current="page"><small>SPOTS</small>ブルーライトアップ</a></li><li><a href="schedule.html" data-bg="assets/hanami.webp"><small>SCHEDULE</small>スケジュール</a></li><li><a href="gallery.html" data-bg="assets/sakura_night.webp"><small>GALLERY</small>ギャラリー</a></li><li><a href="contact.html" data-bg="assets/hanabi_crowd.webp"><small>CONTACT</small>参加・お問い合わせ</a></li></ul>
+</nav>
+
+<div id="progress" aria-hidden="true"><i></i></div>
+
+<main>
+
+<section class="page-head" aria-label="町田のあちこちに、<br>青い光が灯る。">
+  <div class="ph-bg" style="background-image:url('assets/deck.webp')" role="img" aria-label="青い光に包まれた町田駅前ペデストリアンデッキ"></div>
+  <div class="ph-ov" aria-hidden="true"></div>
+  <div class="ph-inner">
+    <div class="crumb"><a href="index.html">HOME</a><span>SPOTS</span></div>
+    <span class="eyebrow">SPOTS</span>
+    <h1>町田のあちこちに、<br>青い光が灯る。</h1>
+    <p class="ph-lead">ブルーライトアップの会場と、青い花火の打ち上げ場所をご紹介します。</p>
+  </div>
+</section>
+
+<section id="spots">
+  <div class="spots-wrap">
+    <div>
+      <div class="reveal" style="margin-bottom:50px">
+        <span class="eyebrow">BLUE SPOTS MAP</span>
+        <h2 class="h2">光の場所を、<br>たどる。</h2>
+      </div>
+      <div class="mapbox reveal" id="mapbox">
+        <svg viewBox="0 0 640 480" role="group" aria-label="町田市内のブルーライトアップスポットを示す抽象マップ">
+          <path class="map-path" d="M80,380 C160,340 220,350 280,290 C340,230 380,250 440,200 C490,160 500,140 540,110" />
+          <g class="spot active" data-spot="0" role="button" tabindex="0" aria-label="町田駅前ペデストリアンデッキ">
+            <circle class="halo" cx="90" cy="378" r="16"/><circle class="core" cx="90" cy="378" r="5"/>
+            <text x="108" y="384">町田駅前ペデストリアンデッキ</text>
+          </g>
+          <g class="spot" data-spot="1" role="button" tabindex="0" aria-label="原町田大通り">
+            <circle class="halo" cx="275" cy="292" r="16"/><circle class="core" cx="275" cy="292" r="5"/>
+            <text x="293" y="298">原町田大通り</text>
+          </g>
+          <g class="spot" data-spot="2" role="button" tabindex="0" aria-label="芹ケ谷公園">
+            <circle class="halo" cx="438" cy="202" r="16"/><circle class="core" cx="438" cy="202" r="5"/>
+            <text x="456" y="208">芹ケ谷公園</text>
+          </g>
+          <g class="spot" data-spot="3" role="button" tabindex="0" aria-label="町田市庁舎">
+            <circle class="halo" cx="540" cy="112" r="16"/><circle class="core" cx="540" cy="112" r="5"/>
+            <text x="440" y="90">町田市庁舎</text>
+          </g>
+        </svg>
+      </div>
+      <p style="margin-top:20px;font-size:11.5px;color:rgba(234,245,255,.45);letter-spacing:.1em">※ 位置関係を抽象化したイメージマップです</p>
+    </div>
+    <div class="spot-panel reveal" aria-live="polite">
+      <figure class="spot-photo"><img id="spotImg" src="assets/deck.webp" alt="青い光に包まれた町田駅前ペデストリアンデッキの屋根と行き交う人々"></figure>
+      <h3 class="spot-name" id="spotName">町田駅前ペデストリアンデッキ</h3>
+      <p class="spot-desc" id="spotDesc">町田の玄関口。大きな屋根がブルーの光に包まれ、行き交う人々を静かに照らします。</p>
+    </div>
+  </div>
+</section>
+
+<section id="spotlist">
+  <div class="sl-grid">
+    <article class="sl-card reveal">
+      <figure class="ph"><img src="assets/deck.webp" alt="青い光に包まれたペデストリアンデッキ" loading="lazy"></figure>
+      <div class="sl-body"><b>SPOT 01</b><h3>町田駅前ペデストリアンデッキ</h3><p>町田の玄関口。大きな屋根がブルーの光に包まれ、行き交う人々を静かに照らします。</p><span class="sl-period">LIGHT UP ｜ 3月下旬 – 4月2日</span></div>
+    </article>
+    <article class="sl-card reveal">
+      <figure class="ph"><img src="assets/staba.webp" alt="青い電球のイルミネーションと店先の灯り" loading="lazy"></figure>
+      <div class="sl-body"><b>SPOT 02</b><h3>原町田大通り</h3><p>まちの商店の皆様のご協力で、通りに青い光が連なります。</p><span class="sl-period">LIGHT UP ｜ 3月下旬 – 4月2日</span></div>
+    </article>
+    <article class="sl-card reveal">
+      <figure class="ph"><img src="assets/hanami.webp" alt="青くライトアップされた桜と花見をする人々" loading="lazy"></figure>
+      <div class="sl-body"><b>SPOT 03</b><h3>芹ケ谷公園</h3><p>多目的広場の桜の木がブルーに染まり、青い花火の打ち上げ会場にもなります。</p><span class="sl-period">LIGHT UP ＋ FIREWORKS ｜ 4月2日</span></div>
+    </article>
+    <article class="sl-card reveal">
+      <figure class="ph"><div class="nodata">PHOTO — COMING SOON</div></figure>
+      <div class="sl-body"><b>SPOT 04</b><h3>町田市庁舎</h3><p>世界自閉症啓発デーの4月2日、市庁舎がブルーにライトアップされます。</p><span class="sl-period">LIGHT UP ｜ 4月2日</span></div>
+    </article>
+  </div>
+</section>
+
+<section id="fireworks">
+  <div class="fw-bg" style="background-image:url('assets/hanabi_blue.webp')" role="img" aria-label="夜空に大きく開く青い花火"></div>
+  <div class="fw-ov" aria-hidden="true"></div>
+  <div class="fw-inner">
+    <span class="eyebrow" style="color:var(--light-blue)">BLUE FIREWORKS ｜ SERIGAYA PARK</span>
+    <h2 class="h2" id="fwTitle">夜空に咲く、希望のブルー。</h2>
+    <div class="fw-body reveal">
+      <p>青い花火は、自閉症への理解と、<br>誰もが共に暮らせる街への願いを込めた<br>WARMBLUEmachidaのシンボルです。</p>
+      <p style="margin-top:2em">同じ空を見上げる時間が、<br>人と人の心を静かにつないでいきます。</p>
+    </div>
+  </div>
+</section>
+<script>
+window.SPOT_DATA=[
+ {img:'assets/deck.webp',alt:'青い光に包まれた町田駅前ペデストリアンデッキの屋根と行き交う人々',name:'町田駅前ペデストリアンデッキ',desc:'町田の玄関口。大きな屋根がブルーの光に包まれ、行き交う人々を静かに照らします。'},
+ {img:'assets/staba.webp',alt:'青い電球のイルミネーションと店先の灯り',name:'原町田大通り',desc:'まちの商店の皆様のご協力で、通りに青い光が連なります。'},
+ {img:'assets/hanami.webp',alt:'青くライトアップされた桜と花見をする人々',name:'芹ケ谷公園',desc:'多目的広場の桜の木がブルーに染まり、青い花火の打ち上げ会場にもなります。'},
+ {img:'',alt:'',name:'町田市庁舎',desc:'世界自閉症啓発デーの4月2日、市庁舎がブルーにライトアップされます。'}
+];
+</script>
+
+<section class="cta-band">
+  <div class="cta-glow" aria-hidden="true"></div>
+  <div class="cta-in reveal">
+    <h2 class="h2">光が灯る日を、確かめる。</h2>
+    <a class="btn-solid" href="schedule.html">スケジュールを見る</a>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="foot-aurora" aria-hidden="true"></div>
+  <div class="foot-grid">
+    <div class="foot-brand">
+      <img src="assets/emblem.webp" alt="WARM BLUE MACHIDA">
+      <p>世界自閉症啓発デーに合わせて、町田の街を青い光で彩り、自閉症への理解を広げる活動です。</p>
+    </div>
+    <div class="foot-nav">
+      <ul>
+        <b>SITE</b>
+        <li><a href="index.html">トップ</a></li>
+        <li><a href="about.html">活動について</a></li>
+        <li><a href="story.html">STORY</a></li>
+        <li><a href="spots.html">ブルーライトアップ</a></li>
+        <li><a href="schedule.html">スケジュール</a></li>
+        <li><a href="gallery.html">ギャラリー</a></li>
+        <li><a href="contact.html">参加・お問い合わせ</a></li>
+      </ul>
+      <ul>
+        <b>SOCIAL</b>
+        <li><a href="#" aria-disabled="true">Instagram（準備中）</a></li>
+        <li><a href="#" aria-disabled="true">X（準備中）</a></li>
+        <li><a href="#" aria-disabled="true">Facebook（準備中）</a></li>
+      </ul>
+      <ul>
+        <b>INFO</b>
+        <li><a href="contact.html#contact">お問い合わせ</a></li>
+        <li><a href="#" aria-disabled="true">プライバシーポリシー（準備中）</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-big" aria-hidden="true">WARMBLUE<br>MACHIDA</div>
+  <div class="foot-btm">
+    <span>WARMBLUEmachida実行委員会</span>
+    <span>© WARMBLUEmachida Executive Committee</span>
+  </div>
+</footer>
+
+<script src="assets/main.js"></script>
+<script src="assets/cms.js"></script>
+</body>
+</html>
