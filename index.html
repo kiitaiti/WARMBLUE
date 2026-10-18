@@ -30,7 +30,7 @@
 <header id="siteHeader" class="site-header">
   <a class="logo" href="index.html" aria-label="WARM BLUE MACHIDA トップへ"><img src="assets/emblem.webp" alt="WARM BLUE MACHIDA"><span class="logo-txt">WARM BLUE <em>MACHIDA</em></span></a>
   <div class="nav-right">
-    <ul class="gnav" aria-label="グローバルナビゲーション"><li><a href="about.html">ABOUT</a></li><li><a href="story.html">STORY</a></li><li><a href="spots.html">SPOTS</a></li><li><a href="schedule.html">SCHEDULE</a></li><li><a href="gallery.html">GALLERY</a></li><li><a href="contact.html">CONTACT</a></li></ul>
+    <ul class="gnav" aria-label="グローバルナビゲーション"><li><a href="about.html">ABOUT</a></li><li><a href="events.html">EVENT</a></li><li><a href="story.html">STORY</a></li><li><a href="schedule.html">SCHEDULE</a></li><li><a href="gallery.html">GALLERY</a></li><li><a href="contact.html">CONTACT</a></li></ul>
     <button id="motionToggle" type="button" aria-pressed="false" title="アニメーションを減らす">モーションを抑える</button>
     <button id="menuBtn" type="button" aria-expanded="false" aria-controls="menu" aria-label="メニューを開く"><span></span><span></span></button>
   </div>
@@ -41,7 +41,7 @@
   <button id="menuClose" type="button" aria-label="メニューを閉じる">
     <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 5 L19 19 M19 5 L5 19"/></svg>
   </button>
-  <ul><li><a href="index.html" data-bg="assets/sakura_up.webp" aria-current="page"><small>TOP</small>トップ</a></li><li><a href="about.html" data-bg="assets/committee.webp"><small>ABOUT</small>活動について</a></li><li><a href="story.html" data-bg="assets/hanga.webp"><small>STORY</small>WARMBLUE STORY</a></li><li><a href="spots.html" data-bg="assets/deck.webp"><small>SPOTS</small>ブルーライトアップ</a></li><li><a href="schedule.html" data-bg="assets/hanami.webp"><small>SCHEDULE</small>スケジュール</a></li><li><a href="gallery.html" data-bg="assets/sakura_night.webp"><small>GALLERY</small>ギャラリー</a></li><li><a href="contact.html" data-bg="assets/hanabi_crowd.webp"><small>CONTACT</small>参加・お問い合わせ</a></li></ul>
+  <ul><li><a href="index.html" data-bg="assets/sakura_up.webp" aria-current="page"><small>TOP</small>トップ</a></li><li><a href="about.html" data-bg="assets/committee.webp"><small>ABOUT</small>活動について</a></li><li><a href="events.html" data-bg="assets/hanami.webp"><small>EVENT</small>イベント</a></li><li><a href="story.html" data-bg="assets/hanga.webp"><small>STORY</small>WARMBLUE STORY</a></li><li><a href="schedule.html" data-bg="assets/hanami.webp"><small>SCHEDULE</small>スケジュール</a></li><li><a href="gallery.html" data-bg="assets/sakura_night.webp"><small>GALLERY</small>ギャラリー</a></li><li><a href="contact.html" data-bg="assets/hanabi_crowd.webp"><small>CONTACT</small>参加・お問い合わせ</a></li></ul>
 </nav>
 
 <div id="progress" aria-hidden="true"><i></i></div>
@@ -73,6 +73,17 @@
   </div>
   <button id="videoToggle" type="button" aria-pressed="false">映像を停止</button>
   <div class="scroll-hint" aria-hidden="true"><span>SCROLL</span><i></i></div>
+</section>
+
+<section id="eventTop" aria-label="イベント">
+  <div class="ev-head">
+    <div>
+      <span class="eyebrow">EVENT</span>
+      <h2 class="h2" id="evTopTitle">次のイベント</h2>
+    </div>
+    <a class="btn-line light" href="events.html">VIEW ALL <i>→</i></a>
+  </div>
+  <div class="ev-row" id="eventTeaser"><p class="st-empty">読み込み中…</p></div>
 </section>
 
 <section id="statement">
@@ -171,12 +182,12 @@
     <h2 class="h2">青い光を、<br>もっと近くで。</h2>
   </div>
   <div class="hl-grid reveal">
-    <a class="hl-card" href="spots.html">
+    <a class="hl-card" href="events.html">
       <img src="assets/hanami.webp" alt="" loading="lazy">
       <span class="hl-arrow" aria-hidden="true">→</span>
-      <span class="b-en">SPOTS</span>
-      <span class="hl-ttl">ブルーライトアップ</span>
-      <span class="hl-desc">町田のあちこちに灯る、青い光の場所。</span>
+      <span class="b-en">EVENT</span>
+      <span class="hl-ttl">イベント</span>
+      <span class="hl-desc">マルシェ出店から青い花火まで、すべての予定。</span>
     </a>
     <a class="hl-card" href="schedule.html">
       <img src="assets/hanga.webp" alt="" loading="lazy">
@@ -240,8 +251,8 @@
         <b>SITE</b>
         <li><a href="index.html">トップ</a></li>
         <li><a href="about.html">活動について</a></li>
+        <li><a href="events.html">イベント</a></li>
         <li><a href="story.html">STORY</a></li>
-        <li><a href="spots.html">ブルーライトアップ</a></li>
         <li><a href="schedule.html">スケジュール</a></li>
         <li><a href="gallery.html">ギャラリー</a></li>
         <li><a href="contact.html">参加・お問い合わせ</a></li>

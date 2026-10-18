@@ -7,13 +7,13 @@ OUT = os.path.dirname(os.path.abspath(__file__))
 PAGES = [
     ("index.html",    "TOP",      "トップ",        None),
     ("about.html",    "ABOUT",    "活動について",   "assets/committee.webp"),
+    ("events.html",   "EVENT",    "イベント",       "assets/hanami.webp"),
     ("story.html",    "STORY",    "WARMBLUE STORY", "assets/hanga.webp"),
-    ("spots.html",    "SPOTS",    "ブルーライトアップ", "assets/deck.webp"),
     ("schedule.html", "SCHEDULE", "スケジュール",   "assets/hanami.webp"),
     ("gallery.html",  "GALLERY",  "ギャラリー",     "assets/sakura_night.webp"),
     ("contact.html",  "CONTACT",  "参加・お問い合わせ", "assets/hanabi_crowd.webp"),
 ]
-MENU_BG = {"index.html":"assets/sakura_up.webp","about.html":"assets/committee.webp","story.html":"assets/hanga.webp","spots.html":"assets/deck.webp",
+MENU_BG = {"index.html":"assets/sakura_up.webp","about.html":"assets/committee.webp","events.html":"assets/hanami.webp","story.html":"assets/hanga.webp",
            "schedule.html":"assets/hanami.webp","gallery.html":"assets/sakura_night.webp","contact.html":"assets/hanabi_crowd.webp"}
 
 def head(title, desc, cur):
@@ -42,6 +42,7 @@ def head(title, desc, cur):
 
 def nav(cur):
     if cur=="story-detail.html": cur="story.html"
+    if cur=="event-detail.html": cur="events.html"
     gnav = "".join(
         f'<li><a href="{f}"{" aria-current=\"page\"" if f==cur else ""}>{en}</a></li>'
         for f,en,ja,_ in PAGES if f!="index.html")
@@ -88,8 +89,8 @@ FOOTER = """
         <b>SITE</b>
         <li><a href="index.html">トップ</a></li>
         <li><a href="about.html">活動について</a></li>
+        <li><a href="events.html">イベント</a></li>
         <li><a href="story.html">STORY</a></li>
-        <li><a href="spots.html">ブルーライトアップ</a></li>
         <li><a href="schedule.html">スケジュール</a></li>
         <li><a href="gallery.html">ギャラリー</a></li>
         <li><a href="contact.html">参加・お問い合わせ</a></li>
@@ -178,6 +179,17 @@ INDEX = """
   </div>
   <button id="videoToggle" type="button" aria-pressed="false">映像を停止</button>
   <div class="scroll-hint" aria-hidden="true"><span>SCROLL</span><i></i></div>
+</section>
+
+<section id="eventTop" aria-label="イベント">
+  <div class="ev-head">
+    <div>
+      <span class="eyebrow">EVENT</span>
+      <h2 class="h2" id="evTopTitle">次のイベント</h2>
+    </div>
+    <a class="btn-line light" href="events.html">VIEW ALL <i>→</i></a>
+  </div>
+  <div class="ev-row" id="eventTeaser"><p class="st-empty">読み込み中…</p></div>
 </section>
 
 <section id="statement">
@@ -276,12 +288,12 @@ INDEX = """
     <h2 class="h2">青い光を、<br>もっと近くで。</h2>
   </div>
   <div class="hl-grid reveal">
-    <a class="hl-card" href="spots.html">
+    <a class="hl-card" href="events.html">
       <img src="assets/hanami.webp" alt="" loading="lazy">
       <span class="hl-arrow" aria-hidden="true">→</span>
-      <span class="b-en">SPOTS</span>
-      <span class="hl-ttl">ブルーライトアップ</span>
-      <span class="hl-desc">町田のあちこちに灯る、青い光の場所。</span>
+      <span class="b-en">EVENT</span>
+      <span class="hl-ttl">イベント</span>
+      <span class="hl-desc">マルシェ出店から青い花火まで、すべての予定。</span>
     </a>
     <a class="hl-card" href="schedule.html">
       <img src="assets/hanga.webp" alt="" loading="lazy">
@@ -411,76 +423,11 @@ ABOUT = page_head("ABOUT","町田の街を、<br>温かいブルーで包む。"
     </div>
   </div>
 </section>
-""" + cta_band("青い光を、一緒に灯しませんか。","contact.html","参加・お問い合わせ")
-
-# ======================================================== SPOTS
-SPOTS = page_head("SPOTS","町田のあちこちに、<br>青い光が灯る。",
-  "ブルーライトアップの会場と、青い花火の打ち上げ場所をご紹介します。",
-  "assets/deck.webp","青い光に包まれた町田駅前ペデストリアンデッキ") + """
-<section id="spots">
-  <div class="spots-wrap">
-    <div>
-      <div class="reveal" style="margin-bottom:50px">
-        <span class="eyebrow">BLUE SPOTS MAP</span>
-        <h2 class="h2">光の場所を、<br>たどる。</h2>
-      </div>
-      <div class="mapbox reveal" id="mapbox">
-        <svg viewBox="0 0 640 480" role="group" aria-label="町田市内のブルーライトアップスポットを示す抽象マップ">
-          <path class="map-path" d="M80,380 C160,340 220,350 280,290 C340,230 380,250 440,200 C490,160 500,140 540,110" />
-          <g class="spot active" data-spot="0" role="button" tabindex="0" aria-label="町田駅前ペデストリアンデッキ">
-            <circle class="halo" cx="90" cy="378" r="16"/><circle class="core" cx="90" cy="378" r="5"/>
-            <text x="108" y="384">町田駅前ペデストリアンデッキ</text>
-          </g>
-          <g class="spot" data-spot="1" role="button" tabindex="0" aria-label="原町田大通り">
-            <circle class="halo" cx="275" cy="292" r="16"/><circle class="core" cx="275" cy="292" r="5"/>
-            <text x="293" y="298">原町田大通り</text>
-          </g>
-          <g class="spot" data-spot="2" role="button" tabindex="0" aria-label="芹ケ谷公園">
-            <circle class="halo" cx="438" cy="202" r="16"/><circle class="core" cx="438" cy="202" r="5"/>
-            <text x="456" y="208">芹ケ谷公園</text>
-          </g>
-          <g class="spot" data-spot="3" role="button" tabindex="0" aria-label="町田市庁舎">
-            <circle class="halo" cx="540" cy="112" r="16"/><circle class="core" cx="540" cy="112" r="5"/>
-            <text x="440" y="90">町田市庁舎</text>
-          </g>
-        </svg>
-      </div>
-      <p style="margin-top:20px;font-size:11.5px;color:rgba(234,245,255,.45);letter-spacing:.1em">※ 位置関係を抽象化したイメージマップです</p>
-    </div>
-    <div class="spot-panel reveal" aria-live="polite">
-      <figure class="spot-photo"><img id="spotImg" src="assets/deck.webp" alt="青い光に包まれた町田駅前ペデストリアンデッキの屋根と行き交う人々"></figure>
-      <h3 class="spot-name" id="spotName">町田駅前ペデストリアンデッキ</h3>
-      <p class="spot-desc" id="spotDesc">町田の玄関口。大きな屋根がブルーの光に包まれ、行き交う人々を静かに照らします。</p>
-    </div>
-  </div>
-</section>
-
-<section id="spotlist">
-  <div class="sl-grid">
-    <article class="sl-card reveal">
-      <figure class="ph"><img src="assets/deck.webp" alt="青い光に包まれたペデストリアンデッキ" loading="lazy"></figure>
-      <div class="sl-body"><b>SPOT 01</b><h3>町田駅前ペデストリアンデッキ</h3><p>町田の玄関口。大きな屋根がブルーの光に包まれ、行き交う人々を静かに照らします。</p><span class="sl-period">LIGHT UP ｜ 3月下旬 – 4月2日</span></div>
-    </article>
-    <article class="sl-card reveal">
-      <figure class="ph"><img src="assets/staba.webp" alt="青い電球のイルミネーションと店先の灯り" loading="lazy"></figure>
-      <div class="sl-body"><b>SPOT 02</b><h3>原町田大通り</h3><p>まちの商店の皆様のご協力で、通りに青い光が連なります。</p><span class="sl-period">LIGHT UP ｜ 3月下旬 – 4月2日</span></div>
-    </article>
-    <article class="sl-card reveal">
-      <figure class="ph"><img src="assets/hanami.webp" alt="青くライトアップされた桜と花見をする人々" loading="lazy"></figure>
-      <div class="sl-body"><b>SPOT 03</b><h3>芹ケ谷公園</h3><p>多目的広場の桜の木がブルーに染まり、青い花火の打ち上げ会場にもなります。</p><span class="sl-period">LIGHT UP ＋ FIREWORKS ｜ 4月2日</span></div>
-    </article>
-    <article class="sl-card reveal">
-      <figure class="ph"><div class="nodata">PHOTO — COMING SOON</div></figure>
-      <div class="sl-body"><b>SPOT 04</b><h3>町田市庁舎</h3><p>世界自閉症啓発デーの4月2日、市庁舎がブルーにライトアップされます。</p><span class="sl-period">LIGHT UP ｜ 4月2日</span></div>
-    </article>
-  </div>
-</section>
-
 <section id="fireworks">
   <div class="fw-bg" style="background-image:url('assets/hanabi_blue.webp')" role="img" aria-label="夜空に大きく開く青い花火"></div>
   <div class="fw-ov" aria-hidden="true"></div>
   <div class="fw-inner">
-    <span class="eyebrow" style="color:var(--light-blue)">BLUE FIREWORKS ｜ SERIGAYA PARK</span>
+    <span class="eyebrow" style="color:var(--light-blue)">BLUE FIREWORKS ｜ 4.2 ｜ SERIGAYA PARK</span>
     <h2 class="h2" id="fwTitle">夜空に咲く、希望のブルー。</h2>
     <div class="fw-body reveal">
       <p>青い花火は、自閉症への理解と、<br>誰もが共に暮らせる街への願いを込めた<br>WARMBLUEmachidaのシンボルです。</p>
@@ -488,15 +435,7 @@ SPOTS = page_head("SPOTS","町田のあちこちに、<br>青い光が灯る。"
     </div>
   </div>
 </section>
-<script>
-window.SPOT_DATA=[
- {img:'assets/deck.webp',alt:'青い光に包まれた町田駅前ペデストリアンデッキの屋根と行き交う人々',name:'町田駅前ペデストリアンデッキ',desc:'町田の玄関口。大きな屋根がブルーの光に包まれ、行き交う人々を静かに照らします。'},
- {img:'assets/staba.webp',alt:'青い電球のイルミネーションと店先の灯り',name:'原町田大通り',desc:'まちの商店の皆様のご協力で、通りに青い光が連なります。'},
- {img:'assets/hanami.webp',alt:'青くライトアップされた桜と花見をする人々',name:'芹ケ谷公園',desc:'多目的広場の桜の木がブルーに染まり、青い花火の打ち上げ会場にもなります。'},
- {img:'',alt:'',name:'町田市庁舎',desc:'世界自閉症啓発デーの4月2日、市庁舎がブルーにライトアップされます。'}
-];
-</script>
-""" + cta_band("光が灯る日を、確かめる。","schedule.html","スケジュールを見る")
+""" + cta_band("青い光を、一緒に灯しませんか。","contact.html","参加・お問い合わせ")
 
 # ======================================================== SCHEDULE
 SCHEDULE = page_head("SCHEDULE","光が灯った日々。",
@@ -543,7 +482,7 @@ SCHEDULE = page_head("SCHEDULE","光が灯った日々。",
     <a class="btn-solid" href="contact.html#contact">お問い合わせ</a>
   </div>
 </section>
-""" + cta_band("青い光の場所を、たどる。","spots.html","ブルーライトアップの会場")
+""" + cta_band("次のイベントを、確かめる。","events.html","イベント一覧へ")
 
 # ======================================================== GALLERY
 GALLERY = page_head("GALLERY","町田に生まれた、<br>青い時間。",
@@ -642,6 +581,44 @@ JOIN = page_head("CONTACT","あなたの想いも、<br>ひとつの光になる
 </section>
 """
 
+EVENTS = page_head("EVENT","マルシェから、<br>青い花火まで。",
+  "出店、ライトアップ、清掃活動、そして4月2日の青い花火。WARMBLUEmachidaのすべての予定と、これまでの記録です。",
+  "assets/hanami.webp","青くライトアップされた桜の下でお花見をする人々") + """
+<section id="events">
+  <p class="cms-notice" id="cmsNoticeEv" hidden>※ microCMS未接続のため、サンプルを表示しています。assets/cms.js の serviceDomain と apiKey を設定してください。</p>
+  <div class="ev-block">
+    <div class="g-head"><span class="eyebrow">UPCOMING</span><h2 class="h2 h2-s">これからのイベント</h2></div>
+    <div class="ev-grid" id="eventUpcoming"><p class="st-empty">読み込み中…</p></div>
+  </div>
+  <div class="ev-block">
+    <div class="g-head"><span class="eyebrow">ARCHIVE</span><h2 class="h2 h2-s">これまでのイベント</h2></div>
+    <div class="ev-grid ev-grid--past" id="eventPast"></div>
+  </div>
+</section>
+""" + cta_band("あなたの想いも、ひとつの光になる。","contact.html","参加・お問い合わせ")
+
+EVENT_DETAIL = """
+<section class="page-head st-head" id="eventHead" aria-label="イベント">
+  <div class="ph-bg" role="img" aria-label=""></div>
+  <div class="ph-ov" aria-hidden="true"></div>
+  <div class="ph-inner">
+    <div class="crumb"><a href="index.html">HOME</a><span><a href="events.html">EVENT</a></span></div>
+    <p class="st-meta"><span class="st-cat"></span><span class="ev-status"></span></p>
+    <h1>読み込み中…</h1>
+  </div>
+</section>
+<section id="eventArticle">
+  <div class="ev-wrap">
+    <aside class="ev-info" id="eventInfo"></aside>
+    <div class="ev-main" id="eventBody"><p class="st-empty" style="color:var(--gray)">読み込み中…</p></div>
+  </div>
+</section>
+<section id="storyRelated" hidden>
+  <div class="g-head"><span class="eyebrow">OTHER EVENTS</span><h2 class="h2 h2-s">ほかのイベント</h2></div>
+  <div class="ev-grid" id="eventRelated"></div>
+</section>
+"""
+
 STORY = page_head("STORY","<span class=\"en\">WARMBLUE</span><br><span class=\"en\">STORY</span>",
   "なぜ青なのか。誰が、どんな想いで灯しているのか。花火の裏にある話を、少しずつ書き残していきます。",
   "assets/hanga.webp","夕暮れにブルーライトアップされた国際版画美術館") + """
@@ -672,15 +649,16 @@ STORY_DETAIL = """
 CONTENT = {
   "index.html": (INDEX[0], INDEX[1], "WARMBLUEmachidaは、世界自閉症啓発デーに合わせて、町田の街をブルーライトと青い花火で彩り、自閉症への理解を広げる活動です。"),
   "about.html": ("", ABOUT, "WARMBLUEmachida実行委員会の活動内容と、これまでの歩みをご紹介します。"),
-  "spots.html": ("", SPOTS, "町田市内のブルーライトアップ会場と、芹ケ谷公園の青い花火についてご紹介します。"),
   "schedule.html": ("", SCHEDULE, "WARMBLUEmachidaの開催スケジュールと、これまでの開催記録。"),
   "gallery.html": ("", GALLERY, "ブルーライトアップと青い花火の写真ギャラリー。町田に生まれた青い時間の記録。"),
+  "events.html": ("", EVENTS, "マルシェ出店、ブルーライトアップ、4月2日の青い花火。WARMBLUEmachidaのイベント情報。"),
+  "event-detail.html": ("", EVENT_DETAIL, "WARMBLUEmachidaのイベント詳細。"),
   "story.html": ("", STORY, "なぜ青なのか。花火の裏にある話を書き残していくWARMBLUEmachidaのSTORY。"),
   "story-detail.html": ("", STORY_DETAIL, "WARMBLUEmachidaのSTORY記事。"),
   "contact.html": ("", JOIN, "イベント参加、ボランティア、協賛・寄付、お問い合わせ。WARMBLUEmachidaへの参加・支援のご案内。"),
 }
 
-for f,en,ja,_ in PAGES+[("story-detail.html","STORY","STORY",None)]:
+for f,en,ja,_ in PAGES+[("story-detail.html","STORY","STORY",None),("event-detail.html","EVENT","EVENT",None)]:
     pre, body, desc = CONTENT[f]
     html = head(ja, desc, f) + pre + nav(f) + body + FOOTER
     with open(os.path.join(OUT,f),"w",encoding="utf-8") as fp: fp.write(html)
