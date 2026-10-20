@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WARMBLUEmachida｜青い光で、人と人をつなぐ。</title>
+<meta name="description" content="WARMBLUEmachidaは、世界自閉症啓発デーに合わせて、町田の街をブルーライトと青い花火で彩り、自閉症への理解を広げる活動です。">
+<meta property="og:title" content="WARMBLUEmachida｜青い光で、人と人をつなぐ。">
+<meta property="og:description" content="WARMBLUEmachidaは、世界自閉症啓発デーに合わせて、町田の街をブルーライトと青い花火で彩り、自閉症への理解を広げる活動です。">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/heroposter.webp">
+<link rel="icon" type="image/webp" href="assets/emblem.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Noto+Sans+JP:wght@300;400;500;700&family=Shippori+Mincho:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body class="entering">
+<div class="page-fade" aria-hidden="true"></div>
+<div class="noise" aria-hidden="true"></div>
+
+<div id="intro" role="presentation">
+  <div class="intro-light" aria-hidden="true"></div>
+  <div class="intro-logo"><img src="assets/emblem.webp" alt="WARM BLUE MACHIDA"></div>
+  <button id="skipIntro" type="button">SKIP</button>
+</div>
+
+<div id="cursor" aria-hidden="true"><i class="c-core"></i></div>
+
+<header id="siteHeader" class="site-header">
+  <a class="logo" href="index.html" aria-label="WARM BLUE MACHIDA トップへ"><img src="assets/emblem.webp" alt="WARM BLUE MACHIDA"><span class="logo-txt">WARM BLUE <em>MACHIDA</em></span></a>
+  <div class="nav-right">
+    <ul class="gnav" aria-label="グローバルナビゲーション"><li><a href="about.html">ABOUT</a></li><li><a href="events.html">EVENT</a></li><li><a href="story.html">STORY</a></li><li><a href="schedule.html">SCHEDULE</a></li><li><a href="gallery.html">GALLERY</a></li><li><a href="contact.html">CONTACT</a></li></ul>
+    <button id="motionToggle" type="button" aria-pressed="false" title="アニメーションを減らす">モーションを抑える</button>
+    <button id="menuBtn" type="button" aria-expanded="false" aria-controls="menu" aria-label="メニューを開く"><span></span><span></span></button>
+  </div>
+</header>
+
+<nav id="menu" aria-label="サイト内メニュー">
+  <div class="menu-bg" id="menuBg" aria-hidden="true"></div>
+  <button id="menuClose" type="button" aria-label="メニューを閉じる">
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 5 L19 19 M19 5 L5 19"/></svg>
+  </button>
+  <ul><li><a href="index.html" data-bg="assets/sakura_up.webp" aria-current="page"><small>TOP</small>トップ</a></li><li><a href="about.html" data-bg="assets/committee.webp"><small>ABOUT</small>活動について</a></li><li><a href="events.html" data-bg="assets/hanami.webp"><small>EVENT</small>イベント</a></li><li><a href="story.html" data-bg="assets/hanga.webp"><small>STORY</small>WARMBLUE STORY</a></li><li><a href="schedule.html" data-bg="assets/hanami.webp"><small>SCHEDULE</small>スケジュール</a></li><li><a href="gallery.html" data-bg="assets/sakura_night.webp"><small>GALLERY</small>ギャラリー</a></li><li><a href="contact.html" data-bg="assets/hanabi_crowd.webp"><small>CONTACT</small>参加・お問い合わせ</a></li></ul>
+</nav>
+
+<div id="progress" aria-hidden="true"><i></i></div>
+
+<main>
+
+<section id="hero" aria-label="メインビジュアル">
+  <div class="hero-media">
+    <video id="heroVideo" muted loop playsinline preload="auto" poster="assets/heroposter.webp"
+      aria-label="芹ケ谷公園の夜空に、青い花火が次々と打ち上がる映像。芝生から大勢の人々が見上げている">
+      <source src="assets/hero.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="hero-ov" aria-hidden="true"></div>
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="hero-inner">
+    <h1 class="hero-logo" id="heroLogo">
+      <span class="hl-lock">
+        <img src="assets/emblem.webp" alt="">
+        <span class="hl-text">
+          <span class="hl-warm">WARM BLUE</span>
+          <span class="hl-rule"><i></i><span class="hl-machida">MACHIDA</span></span>
+          <span class="hl-tag">青い光で、人と人をつなぐ。</span>
+        </span>
+      </span>
+      <span class="sr-only">WARM BLUE MACHIDA — 青い光で、人と人をつなぐ。</span>
+    </h1>
+    <p class="hero-sub">自閉症への理解を、町田から。</p>
+  </div>
+  <button id="videoToggle" type="button" aria-pressed="false">映像を停止</button>
+  <div class="scroll-hint" aria-hidden="true"><span>SCROLL</span><i></i></div>
+</section>
+
+<section id="eventTop" aria-label="イベント">
+  <div class="ev-head">
+    <div>
+      <span class="eyebrow">EVENT</span>
+      <h2 class="h2" id="evTopTitle">イベント予定</h2>
+    </div>
+    <a class="btn-line light" href="events.html">VIEW ALL <i>→</i></a>
+  </div>
+  <div class="ev-row" id="eventTeaser"><p class="st-empty">読み込み中…</p></div>
+</section>
+
+<section id="statement">
+  <div class="floating-lights" aria-hidden="true">
+    <span class="fl" style="width:180px;height:180px;left:8%;top:20%"></span>
+    <span class="fl" style="width:120px;height:120px;right:12%;top:55%;animation-delay:-6s"></span>
+    <span class="fl" style="width:90px;height:90px;left:30%;bottom:12%;animation-delay:-11s"></span>
+  </div>
+  <div class="stmt-wrap reveal">
+    <h2 class="h2">
+      <span class="reveal-line"><span>ひとつの<span class="kw">青い光</span>が、</span></span>
+      <span class="reveal-line"><span>街の景色を変えていく。</span></span>
+    </h2>
+    <div class="body-txt">
+      <p>毎年4月2日は、世界自閉症啓発デー。</p>
+      <p>WARMBLUEmachidaは、<br>町田の街を青い光で彩りながら、<br>自閉症について知り、考え、<br>人と人が<span class="kw">つながる</span>きっかけをつくる活動です。</p>
+      <p>障害がある人も、ない人も。<br>一人ひとりが安心して暮らし、<br>それぞれの色で輝ける街へ。</p>
+    </div>
+  </div>
+</section>
+
+<section id="awareness">
+  <div class="aw-grid">
+    <div class="reveal">
+      <span class="eyebrow">BLUE IS A MESSAGE.</span>
+      <div class="aw-num">04.02<small>WORLD AUTISM AWARENESS DAY</small></div>
+      <div class="aw-body body-txt">
+        <h2 class="h2" style="font-size:clamp(24px,3vw,36px);margin-bottom:28px">青には、想いがある。</h2>
+        <p>毎年4月2日は「世界自閉症啓発デー」です。</p>
+        <p style="margin-top:1.6em">世界各地で、建物やランドマークをブルーに照らし、自閉症への理解を広げる取り組みが行われています。</p>
+        <p style="margin-top:1.6em">ブルーは、癒しや希望、そして自閉症への理解を象徴する色です。</p>
+        <p style="margin-top:2.4em"><a class="btn-line dark" href="about.html">ABOUT THE PROJECT <i>→</i></a></p>
+      </div>
+    </div>
+    <figure class="aw-photo" id="awPhoto">
+      <img src="assets/deck.webp" alt="青い光に包まれた町田駅前ペデストリアンデッキと行き交う人々" loading="lazy">
+    </figure>
+  </div>
+</section>
+
+<section id="about">
+  <div class="about-grid">
+    <div class="about-head reveal">
+      <span class="eyebrow">ABOUT THE PROJECT</span>
+      <h2 class="h2">町田の街を、<br>温かいブルーで<br>包む。</h2>
+      <div class="about-body body-txt">
+        <p>私たちは、自閉症とその周辺の課題について、より多くの人に理解を深めてもらうことを目的に活動する「WARMBLUEmachida実行委員会」です。</p>
+        <p style="margin-top:1.8em">2024年、町田市で初めて「WARMBLUEmachida2024」を実施し、多くの皆様からご支援と共感をいただきました。</p>
+        <p style="margin-top:2.4em"><a class="btn-line dark" href="about.html">活動について詳しく <i>→</i></a></p>
+      </div>
+    </div>
+    <div class="about-photos reveal">
+      <figure class="ph about-p1 clip-reveal">
+        <img src="assets/committee.webp" alt="青くライトアップされた桜の木の前に並ぶ、WARMBLUEmachida実行委員会のメンバー" loading="lazy">
+        <figcaption class="cap">実行委員会メンバー｜芹ケ谷公園</figcaption>
+      </figure>
+      <figure class="ph about-p2 clip-reveal" style="transition-delay:.25s">
+        <img src="assets/sakura_up.webp" alt="青い光に照らされた夜桜の花びらのクローズアップ" loading="lazy">
+        <figcaption class="cap">ブルーに染まる夜桜</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section id="future" aria-label="実現したい未来">
+  <div class="future-track" id="futureTrack">
+    <div class="future-sticky">
+      <div class="fscene on" data-scene="0" style="background-image:url('assets/hanga.webp')" role="img" aria-label="夕暮れにブルーライトアップされた国際版画美術館"></div>
+      <div class="fscene" data-scene="1" style="background-image:url('assets/deck.webp')" role="img" aria-label="青い光に包まれた町田駅前ペデストリアンデッキ"></div>
+      <div class="fscene" data-scene="2" style="background-image:url('assets/sakura_night.webp')" role="img" aria-label="夜の芹ケ谷公園。青くライトアップされた桜とキッチンカー"></div>
+      <div class="fscene" data-scene="3" style="background-image:url('assets/hanabi_crowd.webp')" role="img" aria-label="芹ケ谷公園で夜空を見上げる人々と打ち上がる花火"></div>
+      <svg class="light-line" id="lightLine" viewBox="0 0 1000 600" preserveAspectRatio="none" aria-hidden="true">
+        <defs><linearGradient id="lgrad" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stop-color="#1E6FFF"/><stop offset=".5" stop-color="#55B7FF"/><stop offset="1" stop-color="#B9E8FF"/>
+        </linearGradient></defs>
+        <path d="M60,470 C220,380 300,480 430,400 S680,300 940,180"/>
+      </svg>
+      <div class="future-copy">
+        <span class="eyebrow reveal in" style="opacity:1">LIGHT UP THE CITY. LIGHT UP THE FUTURE.</span>
+        <h2 class="h2">街を照らすことは、<br>未来を照らすこと。</h2>
+        <div class="fbody" id="fbody">
+          <p>このプロジェクトでは、町田市内のさまざまな場所をブルーにライトアップし、夜空に青い花火を打ち上げます。</p>
+          <p style="margin-top:1.6em">ブルーライトと青い花火を、障害がある人もない人も一緒に楽しみながら、「互いに住みやすく、輝ける街・町田」という希望のメッセージを届けます。</p>
+        </div>
+      </div>
+    </div>
+    <div class="spacer" aria-hidden="true"></div>
+    <div class="spacer" aria-hidden="true"></div>
+    <div class="spacer" aria-hidden="true"></div>
+  </div>
+</section>
+
+<section id="highlights">
+  <div class="hl-head reveal">
+    <span class="eyebrow">EXPLORE</span>
+    <h2 class="h2">青い光を、<br>もっと近くで。</h2>
+  </div>
+  <div class="hl-grid reveal">
+    <a class="hl-card" href="events.html">
+      <img src="assets/hanami.webp" alt="" loading="lazy">
+      <span class="hl-arrow" aria-hidden="true">→</span>
+      <span class="b-en">EVENT</span>
+      <span class="hl-ttl">イベント</span>
+      <span class="hl-desc">マルシェ出店から青い花火まで、すべての予定。</span>
+    </a>
+    <a class="hl-card" href="schedule.html">
+      <img src="assets/hanga.webp" alt="" loading="lazy">
+      <span class="hl-arrow" aria-hidden="true">→</span>
+      <span class="b-en">SCHEDULE</span>
+      <span class="hl-ttl">スケジュール</span>
+      <span class="hl-desc">開催実績と、これからの予定。</span>
+    </a>
+    <a class="hl-card" href="gallery.html">
+      <img src="assets/hanabi_blue.webp" alt="" loading="lazy">
+      <span class="hl-arrow" aria-hidden="true">→</span>
+      <span class="b-en">GALLERY</span>
+      <span class="hl-ttl">ギャラリー</span>
+      <span class="hl-desc">町田に生まれた、青い時間の記録。</span>
+    </a>
+    <a class="hl-card" href="contact.html">
+      <img src="assets/hanabi_crowd.webp" alt="" loading="lazy">
+      <span class="hl-arrow" aria-hidden="true">→</span>
+      <span class="b-en">CONTACT</span>
+      <span class="hl-ttl">参加・お問い合わせ</span>
+      <span class="hl-desc">あなたの想いも、ひとつの光に。</span>
+    </a>
+  </div>
+</section>
+
+<section id="storyTop">
+  <div class="g-head reveal">
+    <div>
+      <span class="eyebrow">STORY</span>
+      <h2 class="h2"><span class="en">WARMBLUE</span><br><span class="en">STORY</span></h2>
+    </div>
+    <a class="btn-line light" href="story.html">すべての記事を読む <i>→</i></a>
+  </div>
+  <div class="st-grid reveal" id="storyTeaser"></div>
+</section>
+
+<section id="ending">
+  <div class="end-glow" aria-hidden="true"></div>
+  <div class="end-spark" aria-hidden="true"></div>
+  <div class="end-inner reveal">
+    <p class="end-txt">
+      <span class="reveal-line"><span>ひとつの光が、誰かの理解につながる。</span></span>
+      <span class="reveal-line"><span>ひとつの理解が、街の未来を変えていく。</span></span>
+      <span class="reveal-line" style="margin-top:1.6em"><span>青い光で、人と人をつなぐ。</span></span>
+    </p>
+    <p class="end-logo">WARMBLUE MACHIDA</p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="foot-aurora" aria-hidden="true"></div>
+  <div class="foot-grid">
+    <div class="foot-brand">
+      <img src="assets/emblem.webp" alt="WARM BLUE MACHIDA">
+      <p>世界自閉症啓発デーに合わせて、町田の街を青い光で彩り、自閉症への理解を広げる活動です。</p>
+    </div>
+    <div class="foot-nav">
+      <ul>
+        <b>SITE</b>
+        <li><a href="index.html">トップ</a></li>
+        <li><a href="about.html">活動について</a></li>
+        <li><a href="events.html">イベント</a></li>
+        <li><a href="story.html">STORY</a></li>
+        <li><a href="schedule.html">スケジュール</a></li>
+        <li><a href="gallery.html">ギャラリー</a></li>
+        <li><a href="contact.html">参加・お問い合わせ</a></li>
+      </ul>
+      <ul>
+        <b>SOCIAL</b>
+        <li><a href="#" aria-disabled="true">Instagram（準備中）</a></li>
+        <li><a href="#" aria-disabled="true">X（準備中）</a></li>
+        <li><a href="#" aria-disabled="true">Facebook（準備中）</a></li>
+      </ul>
+      <ul>
+        <b>INFO</b>
+        <li><a href="contact.html#contact">お問い合わせ</a></li>
+        <li><a href="#" aria-disabled="true">プライバシーポリシー（準備中）</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-big" aria-hidden="true">WARMBLUE<br>MACHIDA</div>
+  <div class="foot-btm">
+    <span>WARMBLUEmachida実行委員会</span>
+    <span>© WARMBLUEmachida Executive Committee</span>
+  </div>
+</footer>
+
+<script src="assets/main.js"></script>
+<script src="assets/cms.js"></script>
+</body>
+</html>
