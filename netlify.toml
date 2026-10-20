@@ -113,6 +113,23 @@
   from = "/works_tag/*"
   to = "/works/"
   status = 301
+# トップ固定実績の保険: 対応ページが生成されなかった場合のみ実績一覧へ（status=302・force なしなのでページがあればそちらが優先）
+[[redirects]]
+  from = "/works/sns-influencer/"
+  to = "/works/machida-short-video/"
+  status = 302
+[[redirects]]
+  from = "/works/game-commentary-1/"
+  to = "/works/game-thumbnail/"
+  status = 302
+[[redirects]]
+  from = "/works/game-commentary-2/"
+  to = "/works/game-thumbnail/"
+  status = 302
+[[redirects]]
+  from = "/works/news-youtube/"
+  to = "/works/news-thumbnail/"
+  status = 302
 [[redirects]]
   from = "/author/*"
   to = "/column/"
